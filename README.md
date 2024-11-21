@@ -95,3 +95,8 @@ This project is licensed under the [MIT License](LICENSE). Feel free to use, mod
 If you have any questions or concerns, please contact us at [vantlynxz@gmail.com](mailto:vantlynxz@gmail.com).
 
 Enjoy using Ollama with Docker Compose! 🐳🚀
+
+
+
+-------try new things:
+https://ollama.com/hub/hub

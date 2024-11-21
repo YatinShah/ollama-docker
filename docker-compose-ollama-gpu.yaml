@@ -60,6 +60,24 @@ services:
     networks:
       - ollama-docker
 
+  firefox:
+    image: jlesage/firefox
+    hostname: firefox
+    container_name: firefox
+    ports:
+      - 5800:5800
+    networks:
+      - ollama-docker
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: '0.1'
+    #       memory: 1G
+    #     reservations:
+    #       cpus: '0.05'
+    #       memory: 500M
+
+
 networks:
   ollama-docker:
     external: false
