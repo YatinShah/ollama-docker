@@ -100,3 +100,23 @@ Enjoy using Ollama with Docker Compose! 🐳🚀
 
 -------try new things:
 https://ollama.com/hub/hub
+
+
+- [OpenWebUI](https://docs.openwebui.com/ )
+- [FAQ](https://github.com/ollama/ollama/blob/main/docs/README.md )^^how to steps as well^^
+- [some scripts](https://github.com/CtrlAiDel/How-to-Run-Multiple-AI-Models-with-Ollama-and-Open-WebUI-in-Docker/blob/main/README.md )
+- [Llama model library](https://ollama.com/search )
+  - To download a model for Ollama, run following commands
+      ```Shell
+      $> docker exec -it ollama bash
+       $> ollama list
+       $> ollama pull <model name>:<size tag>
+      ```
+  - Open the Ollama WebUI from the firefox container
+    - On Remote computer open browser and connect to the ubuntu server on port 5800 
+        > e.g. http://ubuntu:5800 Or http:<Ubuntu Ip>:5800, assuming firewall is open.
+    - Then in the firefox, type http://ollama-webui:8080 , this will open Ollama webui.
+    - Now from left corner select model we like, or download new ones from above commands !!
+
+
+

@@ -4,3 +4,6 @@ venv/
 ollama/
 *.gguf
 *.ggml
+.devcontainers/
+.vscode/
+.github/
