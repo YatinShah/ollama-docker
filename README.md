@@ -100,13 +100,16 @@ Enjoy using Ollama with Docker Compose! 🐳🚀
 
 -------try new things:
 https://ollama.com/hub/hub
-
-
 - [OpenWebUI](https://docs.openwebui.com/ )
 - [FAQ](https://github.com/ollama/ollama/blob/main/docs/README.md )^^how to steps as well^^
 - [some scripts](https://github.com/CtrlAiDel/How-to-Run-Multiple-AI-Models-with-Ollama-and-Open-WebUI-in-Docker/blob/main/README.md )
 - Microsoft Phi2 SLM: A small but very powerful model for coding
+- As of 12/08/24, I was able to run this solution with NVIDIA GPU. Run following docker command to run this solution with CPUs.
+    - $> docker compose -f docker-compose-ollama-gpu.yaml up. 
+    - If GPU errors are recieved re-install GPU drivers for docker.
 - [Llama model library](https://ollama.com/search )
+- Nuget - Ollamasharp : https://www.nuget.org/packages/OllamaSharp/
+    - Example w Semantic Kernel: https://dev.to/azure/extending-semantickernel-using-ollamasharp-for-chat-and-text-completion-4m10 
   - To download a model for Ollama, run following commands
       ```Shell
       $> docker exec -it ollama bash
@@ -118,10 +121,6 @@ https://ollama.com/hub/hub
         > e.g. http://ubuntu:5800 Or http:<Ubuntu Ip>:5800, assuming firewall is open.
     - Then in the firefox, type http://ollama-webui:8080 , this will open Ollama webui.
     - Now from left corner select model we like, or download new ones from above commands !!
-
-- Nuget - Ollamasharp : https://www.nuget.org/packages/OllamaSharp/
-    - Example w Semantic Kernel: https://dev.to/azure/extending-semantickernel-using-ollamasharp-for-chat-and-text-completion-4m10 
-
 - To this repo I have added a OllamaSharp example, basically a copy of the demo code from [OllamaSharp Git repo](https://github.com/awaescher/OllamaSharp ).
     - The demo folder under src contains this demo project, build it and run it, provide the ollama url, e.g. localhost:7869 when prompted.
     - If we run $> docker stats, we will see that the ollama model uses 800%+ CPUs.
