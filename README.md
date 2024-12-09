@@ -105,6 +105,7 @@ https://ollama.com/hub/hub
 - [OpenWebUI](https://docs.openwebui.com/ )
 - [FAQ](https://github.com/ollama/ollama/blob/main/docs/README.md )^^how to steps as well^^
 - [some scripts](https://github.com/CtrlAiDel/How-to-Run-Multiple-AI-Models-with-Ollama-and-Open-WebUI-in-Docker/blob/main/README.md )
+- Microsoft Phi2 SLM: A small but very powerful model for coding
 - [Llama model library](https://ollama.com/search )
   - To download a model for Ollama, run following commands
       ```Shell
@@ -118,5 +119,11 @@ https://ollama.com/hub/hub
     - Then in the firefox, type http://ollama-webui:8080 , this will open Ollama webui.
     - Now from left corner select model we like, or download new ones from above commands !!
 
+- Nuget - Ollamasharp : https://www.nuget.org/packages/OllamaSharp/
+    - Example w Semantic Kernel: https://dev.to/azure/extending-semantickernel-using-ollamasharp-for-chat-and-text-completion-4m10 
 
+- To this repo I have added a OllamaSharp example, basically a copy of the demo code from [OllamaSharp Git repo](https://github.com/awaescher/OllamaSharp ).
+    - The demo folder under src contains this demo project, build it and run it, provide the ollama url, e.g. localhost:7869 when prompted.
+    - If we run $> docker stats, we will see that the ollama model uses 800%+ CPUs.
+    - Add more models, e.g. Phi2 and run the demo app to see what can it do.
 
