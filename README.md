@@ -1,18 +1,19 @@
-# Ollama Docker Compose Setup
+# source virtual environment from root folder:
+` $> source ./.venv/bin/activate . `
+# Restore environment from requirements file:
+` $> pip install -r requirements.txt `
 
+# Ollama Docker Compose Setup
 Welcome to the Ollama Docker Compose Setup! This project simplifies the deployment of Ollama using Docker Compose, making it easy to run Ollama with all its dependencies in a containerized environment.
 [![Star History Chart](https://api.star-history.com/svg?repos=valiantlynx/ollama-docker&type=Date)](https://star-history.com/#valiantlynx/ollama-docker&Date)
 
 ## Getting Started
-
 ### Prerequisites
 Make sure you have the following prerequisites installed on your machine:
-
 - Docker
 - Docker Compose
 
 #### GPU Support (Optional)
-
 If you have a GPU and want to leverage its power within a Docker container, follow these steps to install the NVIDIA Container Toolkit:
 
 ```bash

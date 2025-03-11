@@ -380,4 +380,5 @@ ollama/
 .vscode/
 .github/
 *.pdf
+*.txt
 Paper/
