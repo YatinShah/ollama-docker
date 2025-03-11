@@ -372,10 +372,12 @@ data/
 
 .dist
 /src/__pycache__
-venv/
+.venv/
 ollama/
 *.gguf
 *.ggml
 .devcontainers/
 .vscode/
 .github/
+*.pdf
+Paper/

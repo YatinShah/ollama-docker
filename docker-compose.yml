@@ -1,7 +1,11 @@
-version: '3.8'
+# version: '3.8'
 services:
   app:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ollama-app
+    container_name: ollama-app
     ports:
       - 8000:8000
       - 5678:5678
@@ -16,7 +20,7 @@ services:
       - ollama-docker
 
   ollama:
-    image: ollama/ollama:latest
+    image: ollama/ollama:0.5.13
     ports:
       - 7869:11434
     volumes:
@@ -27,13 +31,14 @@ services:
     tty: true
     restart: always
     environment:
+      - OLLAMA_DEBUG=1
       - OLLAMA_KEEP_ALIVE=24h
       - OLLAMA_HOST=0.0.0.0
     networks:
       - ollama-docker
 
   ollama-webui:
-    image: ghcr.io/open-webui/open-webui:main
+    image: ghcr.io/open-webui/open-webui:git-b03fc97
     container_name: ollama-webui
     volumes:
       - ./ollama/ollama-webui:/app/backend/data
