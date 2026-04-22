@@ -16,13 +16,19 @@ services:
     depends_on:
       - ollama
       - ollama-webui
+    # Limit resources given to the container
+    deploy:
+      resources:
+        limits:
+          cpus: '6'
+          memory: 18G
     networks:
       - ollama-docker
 
   ollama:
-    image: ollama/ollama:0.5.13
+    image: ollama/ollama:0.21.1
     ports:
-      - 7869:11434
+      - 9090:11434
     volumes:
       - .:/code
       - ./ollama/ollama:/root/.ollama
