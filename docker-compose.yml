@@ -16,12 +16,11 @@ services:
     depends_on:
       - ollama
       - ollama-webui
-    # Limit resources given to the container
     deploy:
       resources:
         limits:
-          cpus: '6'
-          memory: 18G
+          cpus: '.25'
+          memory: 200M
     networks:
       - ollama-docker
 
@@ -40,6 +39,12 @@ services:
       - OLLAMA_DEBUG=1
       - OLLAMA_KEEP_ALIVE=24h
       - OLLAMA_HOST=0.0.0.0
+    # Limit resources given to the container
+    deploy:
+      resources:
+        limits:
+          cpus: '6'
+          memory: 30G
     networks:
       - ollama-docker
 
@@ -62,6 +67,11 @@ services:
     extra_hosts:
       - host.docker.internal:host-gateway
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: '.5'
+          memory: 300M
     networks:
       - ollama-docker
 
