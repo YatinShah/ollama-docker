@@ -13,6 +13,11 @@ services:
     depends_on:
       - ollama
       - ollama-webui
+    deploy:
+      resources:
+        limits:
+          cpus: '.25'
+          memory: 200M
     networks:
       - ollama-docker
       
@@ -25,13 +30,16 @@ services:
     restart: unless-stopped
     image: ollama/ollama:0.5.13
     ports:
-      - 7869:11434
+      - 9090:11434
     environment:
       - OLLAMA_KEEP_ALIVE=24h
     networks:
       - ollama-docker
     deploy:
       resources:
+        limits:
+          cpus: '6'
+          memory: 30G
         reservations:
           devices:
             - driver: nvidia
@@ -58,6 +66,11 @@ services:
     extra_hosts:
       - host.docker.internal:host-gateway
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: '.5'
+          memory: 300M
     networks:
       - ollama-docker
 
