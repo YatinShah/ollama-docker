@@ -33,6 +33,11 @@ services:
       - 9090:11434
     environment:
       - OLLAMA_KEEP_ALIVE=24h
+      - OLLAMA_HOST=0.0.0.0
+      # reduce context size
+      - OLLAMA_CONTEXT_LENGTH=2048
+      # reduces the memory required to process long strings of text.
+      - OLLAMA_FLASH_ATTENTION=1.  
     networks:
       - ollama-docker
     deploy:

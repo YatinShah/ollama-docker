@@ -36,9 +36,13 @@ services:
     tty: true
     restart: always
     environment:
-      - OLLAMA_DEBUG=1
+      - OLLAMA_DEBUG=0
       - OLLAMA_KEEP_ALIVE=24h
       - OLLAMA_HOST=0.0.0.0
+      # reduce context size
+      - OLLAMA_CONTEXT_LENGTH=2048
+      # reduces the memory required to process long strings of text.
+      - OLLAMA_FLASH_ATTENTION=1
     # Limit resources given to the container
     deploy:
       resources:
